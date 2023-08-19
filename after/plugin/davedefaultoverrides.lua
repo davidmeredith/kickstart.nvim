@@ -1,4 +1,9 @@
 -- Dave's customisations that override the Kickstart defaults. 
+vim.o.wrap = true
+-- Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
 
 -- Decrease update time
 vim.o.updatetime = 250
@@ -65,7 +70,16 @@ vim.keymap.set('i', 'jj', '<ESC>', {noremap = true, silent = false})
 -- nnoremap <leader>] :vertical resize -5<CR>
 -- nnoremap <leader>+ :resize +5<CR>
 -- nnoremap <leader>- :resize -5<CR>
-
+-- vim.keymap.set('n', '<leader>]', ':vertical resize +5<CR>', {noremap=true, silent=true})
+-- vim.keymap.set('n', '<leader>[', ':vertical resize -5<CR>', {noremap=true, silent=true})
+-- vim.keymap.set('n', '<leader>=', ':resize +5<CR>', {noremap=true, silent=true})
+-- vim.keymap.set('n', '<leader>-', ':resize -5<CR>', {noremap=true, silent=true})
+--
+-- DM: Interpret these commands as moving the 'split postion,' not resizing current pane
+vim.keymap.set('n', '<leader>l', ':vertical resize +5<CR>', {noremap=true, silent=true})
+vim.keymap.set('n', '<leader>h', ':vertical resize -5<CR>', {noremap=true, silent=true})
+vim.keymap.set('n', '<leader>j', ':resize +5<CR>', {noremap=true, silent=true})
+vim.keymap.set('n', '<leader>k', ':resize -5<CR>', {noremap=true, silent=true})
 
 
 -- Tab navigation 
