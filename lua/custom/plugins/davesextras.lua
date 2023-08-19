@@ -1,7 +1,7 @@
 return {
     "mbbill/undotree",
     "ibhagwan/fzf-lua",
-    --{ 'folke/which-key.nvim', cond = false}, -- disable which-key plugin
+    { 'folke/which-key.nvim', cond = false}, -- disable which-key plugin
 
     -- colour scheme hould be  available  when starting neovim
     {
@@ -51,5 +51,6 @@ return {
                 -- Configuration here, or leave empty to use defaults
             })
         end
-    }
+    },
+
 }
