@@ -38,7 +38,7 @@ vim.keymap.set({'n'}, '<leader>u', ':UndotreeToggle<CR>', {noremap=true, silent=
 --     vim.keymap.set('n', '<leader>x', ':NvimTreeToggle<CR>', {noremap=true, silent=true})
 --
 --  Neotree
-vim.keymap.set('n', '<leader>t', ':Neotree<CR>', {noremap=true, silent=true})
+vim.keymap.set('n', '<leader>t', ':Neotree toggle<CR>', {noremap=true, silent=true})
 -- reveal current file in file exporer window
 vim.keymap.set({'n'}, '<leader>rt', ':Neotree filesystem reveal left<CR>', {noremap=true, silent=true})
 
