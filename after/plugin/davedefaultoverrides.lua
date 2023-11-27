@@ -18,6 +18,10 @@ vim.o.completeopt = 'menuone,noselect'
 -- FZF (not via telescope) 
 vim.api.nvim_set_keymap('n', '<C-p>', "<cmd>lua require('fzf-lua').files()<CR>", { noremap = true, silent = true })
 
+-- Enable folding with Treesitter, open all folds by default
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.o.foldlevelstart = 99
 
 -- bootstrap bufferline (moved to lazy spec)
 -- require("bufferline").setup{}
