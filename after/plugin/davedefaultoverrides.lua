@@ -26,6 +26,9 @@ vim.o.foldlevelstart = 99
 -- bootstrap bufferline (moved to lazy spec)
 -- require("bufferline").setup{}
 
+-- Session-lens (part of auto-session) search session
+-- ⚠️  will only work if Telescope.nvim is installed
+vim.keymap.set("n", "<leader>ss", require("auto-session.session-lens").search_session, { noremap = true, })
 
 -- UndoTree
 --vim.keymap.set({'n', 'i', 'v'}, '<F5>', ':UndotreeToggle<CR>', {noremap=true, silent=true})
@@ -201,3 +204,17 @@ require('gitsigns').setup {
   end
 }
 
+-- require("bufferchad").setup({
+--   mapping = "<leader>bb", -- Map any key, or set to NONE to disable key mapping
+--   mark_mapping = "<leader>bm", -- The keybinding to display just the marked buffers
+--   order = "LAST_USED_UP", -- LAST_USED_UP (default)/ASCENDING/DESCENDING/REGULAR
+--   style = "default", -- default, modern (requires dressing.nvim and nui.nvim), telescope (requires telescope.nvim)
+--   close_mapping = "<Esc><Esc>", -- only for the default style window. 
+-- })
+
+
+--require('retrospect').setup({
+--  saveKey = "<leader>\\", -- The shortcut to save the session, default is leader+backslash(\)
+--  loadKey = "<leader><BS>", -- The shortcut to load the session
+--  style = "default" -- or "modern", if you have nui.nvim and dressing.nvim
+--})
