@@ -19,7 +19,9 @@ return {
             require("auto-session").setup {
                 log_level = "error",
                 auto_session_suppress_dirs = { "~/", "~/Downloads", "/"},
-                auto_session_use_git_branch = false,
+                -- Ciaron: set use_git_branch to true, auto-session errors if 
+                -- i've swapped branches and the file doesn't exist
+                auto_session_use_git_branch = true,
                 auto_session_enable_last_session = false,
                 pre_save_cmds = {"tabdo Neotree close"},
                 save_extra_cmds = {
@@ -71,7 +73,7 @@ return {
                 --     bright_green = "#990000",
                 -- }
             })
-        vim.cmd([[colorscheme gruvbox]])
+            vim.cmd([[colorscheme gruvbox]])
         end
     },
     -- The colorscheme should be available when starting Neovim
